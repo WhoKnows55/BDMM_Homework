@@ -1,0 +1,24 @@
+docker run --name Neo4JHW2025 --memory=4g -p 7474:7474 -p 7687:7687 -d -v "/Users/joshuawehr/Desktop/BDMM/Practical/Neo4Jplugins":/plugins -v "/Users/joshuawehr/Desktop/BDMM/Practical/Neo4JHWData/data":/data --env NEO4J_AUTH=neo4j/test --env NEO4J_dbms_connector_https_advertised__address="localhost:7473" --env NEO4J_dbms_connector_http_advertised__address="localhost:7474" --env NEO4J_dbms_connector_bolt_advertised__address="localhost:7687" --env NEO4J_dbms_security_procedures_unrestricted="gds.*" --env NEO4J_dbms_security_procedures_allowlist="gds.*" neo4j:4.4.5
+
+
+//Path for Homework
+
+docker run --name Neo4JHW2025 --memory=4g -p 7474:7474 -p 7687:7687 -d \
+  -v "/Users/joshuawehr/Desktop/BDMM/Practical/Neo4Jplugins":/plugins \
+  -v "/Users/joshuawehr/Desktop/BDMM/Practical/Neo4JHWData/data":/data \
+  --env NEO4J_AUTH=neo4j/test \
+  --env NEO4J_dbms_connector_https_advertised__address="localhost:7473" \
+  --env NEO4J_dbms_connector_http_advertised__address="localhost:7474" \
+  --env NEO4J_dbms_connector_bolt_advertised__address="localhost:7687" \
+  --env JAVA_TOOL_OPTIONS="-XX:-UseContainerSupport" \
+  --env NEO4J_dbms_security_procedures_unrestricted="gds.*" \
+  --env NEO4J_dbms_security_procedures_allowlist="gds.*" \
+  neo4j:4.4.5
+
+
+
+//Path for MongoDB
+
+docker run --name mongodb -d -e MONGO_INITDB_ROOT_USERNAME=AzureDiamond -e MONGO_INITDB_ROOT_PASSWORD=hunter2 -p 27017:27017 mongo
+
+
